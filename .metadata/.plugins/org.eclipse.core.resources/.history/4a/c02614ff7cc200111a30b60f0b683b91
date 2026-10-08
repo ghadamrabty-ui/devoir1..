@@ -1,0 +1,126 @@
+package com.ghada.produit.service;
+import java.util.List; 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ghada.produit.entities.produit; 
+import com.ghada.produit.repos .produitRepository;
+
+public class produitservicempl implements produitservice{
+	 @Service 
+	 public class produitServiceImpl implements produitservice { 
+	 //@Autowired 
+	  private final produitRepository produitRepository; 
+	  
+	 public produitServiceImpl(com.ghada.produit.repos.produitRepository produitRepository) {
+		super();
+		this.produitRepository = produitRepository;
+	}
+
+	 @Override 
+	 public produit saveProduit(produit p) { 
+		 return produitRepository.save(p); 
+		   
+	 } 
+	 
+	 @Override 
+	 public produit updateProduit(produit p) { 
+	  return produitRepository.save(p); 
+	   
+	 } 
+	 
+	 @Override 
+	 public void deleteProduit(produit p) { 
+	  produitRepository.delete(p); 
+	 
+	 } 
+	 
+	   @Override 
+	 public void deleteProduitById(Long id) { 
+	  produitRepository.deleteById(id); 
+	   
+	 } 
+	 
+	 @Override 
+	 public produit getproduit(Long id) { 
+	  return  produitRepository.findById(id).get(); 
+	  
+	 } 
+	 
+	 @Override 
+	 public List<produit> getAllproduits() { 
+	  return produitRepository.findAll(); 
+	 } 
+	 
+	}
+
+	@Override
+	public produit saveproduit(produit p) {
+		
+		return null;
+	}
+
+	@Override
+	public produit updateproduit(produit p) {
+		
+		return null;
+	}
+
+	@Override
+	public void deleteproduit(produit p) {
+		
+		
+	}
+
+	@Override
+	public void deletproduitById(long id) {
+	
+		
+	}
+
+	@Override
+	public produit getproduit(long id) {
+		
+		return null;
+	}
+
+	@Override
+	public List<produit> getAllproduit() {
+		
+		return null;
+	}
+
+	@Override
+	public produit updateProduit(produit p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public produit saveProduit(produit p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteProduitById(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteProduit(produit p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<produit> getAllproduits() {
+		// TODO Auto-generated method stub
+		return null;
+	} 
+	 
+
+	 }
+
+	

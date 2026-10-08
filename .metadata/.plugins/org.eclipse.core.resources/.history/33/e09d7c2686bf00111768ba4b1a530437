@@ -1,0 +1,21 @@
+
+import java.util.Date;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import com.ghada.produit.entities.produit;
+import com.ghada.produit.repos.ProduitRepository;
+
+@SpringBootTest
+class ProduitApplicationTests {
+
+	@Autowired
+	private ProduitRepository produitRepository;
+
+	@Test
+	public void testCreateProduit() {
+	Produit prod = new Produit("PC Dell", 2200.500, new Date());
+	produitRepository.save(prod);
+
+	}
+}

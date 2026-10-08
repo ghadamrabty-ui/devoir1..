@@ -1,0 +1,15 @@
+package com.ghada.produit.service;
+
+import java.util.List;
+
+import com.ghada.produit.entities.produit;
+
+public interface produitservice {
+	produit saveproduit(produit p);
+	produit updateproduit(produit p);
+	void deleteproduit(produit p);
+	void deletproduitById(long id);
+	produit getproduit(long id);
+	List<produit> getAllproduit();
+
+}

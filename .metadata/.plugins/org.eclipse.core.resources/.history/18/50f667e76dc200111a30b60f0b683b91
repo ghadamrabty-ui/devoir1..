@@ -1,0 +1,11 @@
+package com.ghada.produit.entities;
+
+@Entity 
+public interface categorie {
+	private Long idCat;
+	private String nomCat;
+	private String descriptionCat;
+	
+	
+	
+}

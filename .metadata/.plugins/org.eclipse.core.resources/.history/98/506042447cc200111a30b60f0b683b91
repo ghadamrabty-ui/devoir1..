@@ -1,0 +1,82 @@
+```java
+package com.ghada.produit;
+
+import java.util.Date;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.ghada.produit.entities.produit;
+import com.ghada.produit.repos.produitRepository;
+
+@SpringBootTest
+class ProduitsApplicationTests {
+
+    @Autowired
+    private produitRepository produitRepository;
+
+    @Test
+    public void testCreateProduit() {
+
+        produit produit = new produit("PC Dell3", 2200.500, new Date());
+
+        produitRepository.save(produit);
+    }
+
+    @Test
+    public void testFindProduitByNom() {
+
+        produit produit = produitRepository.findByNomProduit("PS 4");
+
+        System.out.println(produit);
+    }
+
+    @Test
+    public void testFindAllProduits() {
+
+        List<produit> produits = produitRepository.findAll();
+
+        for (produit produit : produits) {
+            System.out.println(produit);
+        }
+    }
+
+    @Test
+    public void testFindProduitsByNomContains() {
+
+        List<produit> produits =
+                produitRepository.findByNomProduitContains("p");
+
+        for (produit produit : produits) {
+            System.out.println(produit);
+        }
+    }
+
+    @Test
+    public void testUpdateProduit() {
+
+        produit produit = produitRepository.findById(1L).get();
+
+        produit.setPrixProduit(2000.0);
+
+        produitRepository.save(produit);
+    }
+
+    @Test
+    public void testDeleteProduit() {
+
+        produitRepository.deleteById(1L);
+    }
+
+    @Test
+    public void testListerTousProduits() {
+
+        List<produit> produits = produitRepository.findAll();
+
+        for (produit produit : produits) {
+            System.out.println(produit);
+        }
+    }
+}

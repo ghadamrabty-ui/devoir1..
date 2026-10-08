@@ -1,0 +1,60 @@
+package com.ghada.produit.entities;
+
+import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class produit {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idproduit;
+	private String nomproduit;
+	private Double prixproduit;
+	private Date dattecreation;
+	public long getIdproduit() {
+		return idproduit;
+	}
+	public void setIdproduit(long idproduit) {
+		this.idproduit = idproduit;
+	}
+	public String getNomproduit() {
+		return nomproduit;
+	}
+	public void setNomproduit(String nomproduit) {
+		this.nomproduit = nomproduit;
+	}
+	public double getPrixproduit() {
+		return prixproduit;
+	}
+	public void setPrixproduit(double prixproduit) {
+		this.prixproduit = prixproduit;
+	}
+	public Date getDattecreation() {
+		return dattecreation;
+	}
+	public void setDattecreation(Date dattecreation) {
+		this.dattecreation = dattecreation;
+	}
+	public produit() {
+		super();
+	}
+	public produit(String nomproduit, double prixproduit, Date dattecreation) {
+		super();
+		this.nomproduit = nomproduit;
+		this.prixproduit = prixproduit;
+		this.dattecreation = dattecreation;
+	}
+	@Override
+	public String toString() {
+		return "produit [idproduit=" + idproduit + ", nomproduit=" + nomproduit + ", prixproduit=" + prixproduit
+				+ ", dattecreation=" + dattecreation + "]";
+	}
+	
+	
+	
+
+}

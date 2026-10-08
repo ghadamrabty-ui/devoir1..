@@ -1,0 +1,51 @@
+package com.ghada.produit;
+
+import java.util.Date;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.ghada.produit.entities.produit;
+import com.ghada.produit.repos.produitRepository;
+
+@SpringBootTest
+class ProduitsApplicationTests {
+
+    @Autowired
+    private produitRepository produitRepository;
+
+    @Test
+    public void testCreateProduit() {
+        produit prod = new produit("PC Dell3", 2200.500, new Date());
+        produitRepository.save(prod);
+    }
+
+    @Test
+    public void testFindProduit() {
+        produit p = produitRepository.findById(1L).get();
+        System.out.println(p);
+    }
+
+    @Test
+    public void testUpdateProduit() {
+        produit p = produitRepository.findById(1L).get();
+        p.setPrixproduit(1000.0);
+        produitRepository.save(p);
+    }
+
+    @Test
+    public void testDeleteProduit() {
+        produitRepository.deleteById(1L);
+    }
+
+    @Test
+    public void testListerTousProduits() {
+        List<produit> prods = produitRepository.findAll();
+
+        for (produit p : prods) {
+            System.out.println(p);
+        }
+    }
+}
